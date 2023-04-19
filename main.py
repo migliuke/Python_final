@@ -80,7 +80,7 @@ class Notes(db.Model):
     __tablename__ = 'notes'
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(150), nullable=False)
-    text = db.Column(db.Integer, nullable=False)
+    text = db.Column(db.String, nullable=False)
     group_id = db.Column(db.Integer, db.ForeignKey('groups.id'))
     group = db.relationship('Groups', back_populates='notes')
     image = db.Column(db.String(150))
